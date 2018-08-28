@@ -1,7 +1,22 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es6",
-    "moduleResolution": "node"
-  }
+    "target": "es5",
+    "moduleResolution": "node",
+
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": [ "es2015", "dom" ],
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "rules": {
+    "member-access": false,
+    "eofline": false
+  },
+  "devtool": "source-map",
+  "devServer": {
+    "historyApiFallback": true
+}
 }

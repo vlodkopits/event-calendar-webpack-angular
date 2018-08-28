@@ -7,11 +7,11 @@ module.exports = {
         extensions: ['.js', '.ts']
     },
     entry: {
-        main: "./src/app.ts",
-        vendor: "./src/vendor.js"
+        polyfills: "./src/polyfills.ts",
+        main: "./src/app.ts"
     },
     output: {
-        path: path.resolve(__dirname, 'dist'), // output directory
+        path: path.resolve(__dirname, 'docs/'), // output directory
         filename: "[name].js" // name of the generated bundle
     },
     module: {
@@ -31,7 +31,11 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: ["style-loader", "css-loader?sourceMap", "sass-loader?sourceMap"]
+                loader: ["raw-loader", "sass-loader?sourceMap"]
+            },
+            {
+                test: /\.html$/,
+                loader: "html-loader"
             }
         ]
     },
